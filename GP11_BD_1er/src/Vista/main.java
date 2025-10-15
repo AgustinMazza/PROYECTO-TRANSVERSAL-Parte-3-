@@ -2,12 +2,13 @@ package Vista;
 
 import Modelo.Alumno;
 import Persistencia.AlumnoData;
+import java.sql.SQLException;
 import java.time.LocalDate;
 
 /* @author Grupo 11*/
 public class main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         Alumno a1 = new Alumno(44752772, "Reta", "Mauricio", LocalDate.of(2003, 4, 13), true);
         Alumno a2 = new Alumno(42357107, "Rodriguez", "Juan Cruz", LocalDate.of(2000, 1, 23), true);
         Alumno a3 = new Alumno(38751080, "Sirur Flores", "Jeremias", LocalDate.of(1995, 3, 13), true);

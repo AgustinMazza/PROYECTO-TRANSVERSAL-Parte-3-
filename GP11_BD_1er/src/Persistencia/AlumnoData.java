@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
 public class AlumnoData {
     private Connection con = null;
     
-    public AlumnoData(){
+    public AlumnoData() throws SQLException{
         con = Conexion.getConexion();
     }
     

@@ -12,7 +12,7 @@ import java.sql.SQLException;
 
 public class ListarMaterias extends javax.swing.JInternalFrame {
     
-    AlumnoData Alumno1 = new AlumnoData();
+    // AlumnoData Alumno1 = new AlumnoData(); esto es de la entrega 1
 
     public ListarMaterias() {
         initComponents();

@@ -16,6 +16,12 @@ public class Inscripcion {
         this.idAlumno = idAlumno;
         this.idMateria = idMateria;
     }
+
+    public Inscripcion() {
+    }
+    
+    
+    
     
     // método(s)
     

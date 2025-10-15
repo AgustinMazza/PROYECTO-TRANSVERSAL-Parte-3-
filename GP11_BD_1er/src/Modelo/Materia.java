@@ -18,6 +18,11 @@ public class Materia {
         this.estado = estado;
         this.calificacion = 0.0;
     }
+
+    public Materia() {
+    }
+    
+    
     
     // método(s)
     
