@@ -34,6 +34,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenuItemInscripcion = new javax.swing.JMenuItem();
         jMenuNotas = new javax.swing.JMenu();
         jMenuItemNotas = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
         jMenuSalir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -43,11 +44,11 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.setLayout(jDesktopPane1Layout);
         jDesktopPane1Layout.setHorizontalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 535, Short.MAX_VALUE)
+            .addGap(0, 1020, Short.MAX_VALUE)
         );
         jDesktopPane1Layout.setVerticalGroup(
             jDesktopPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 497, Short.MAX_VALUE)
+            .addGap(0, 750, Short.MAX_VALUE)
         );
 
         jMenuAlumno.setText("Alumno");
@@ -111,6 +112,14 @@ public class VistaPrincipal extends javax.swing.JFrame {
             }
         });
         jMenuNotas.add(jMenuItemNotas);
+
+        jMenuItem2.setText("Cargar Notas");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
+        jMenuNotas.add(jMenuItem2);
 
         jMenuBar1.add(jMenuNotas);
 
@@ -197,6 +206,17 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.moveToFront(aux4);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        jDesktopPane1.removeAll();
+        jDesktopPane1.repaint();
+        VistaCargarNotas aux5 = new VistaCargarNotas();
+        aux5.setVisible(true);
+        jDesktopPane1.add(aux5);
+        jDesktopPane1.moveToFront(aux5);
+        
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -238,6 +258,7 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu jMenuInscripcion;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItemInscripcion;
     private javax.swing.JMenuItem jMenuItemListarAlumno;
     private javax.swing.JMenuItem jMenuItemMateria;

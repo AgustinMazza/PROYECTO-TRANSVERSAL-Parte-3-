@@ -1,4 +1,3 @@
-
 package Persistencia;
 
 import Modelo.Inscripcion;
@@ -10,14 +9,15 @@ import java.sql.Statement;
 import java.util.HashSet;
 import javax.swing.JOptionPane;
 
-
 public class inscripcionData {
 
     private Connection con = null;
 
-    public inscripcionData() throws SQLException {
+    public inscripcionData(){
         con = Conexion.getConexion();
     }
+    
+   
 
     public void guardarInscripcion(Inscripcion inscripcion) {
 
@@ -44,10 +44,10 @@ public class inscripcionData {
 
     }
 
-        public void modificarInscripcion(Inscripcion inscripcion) {
-            String sql = "UPDATE inscripcion SET nota=? ,idAlumno= ? ,idMateria= ?  WHERE idInscripto =? ";
-            
-            try {
+    public void modificarInscripcion(Inscripcion inscripcion) {
+        String sql = "UPDATE inscripcion SET nota=? ,idAlumno= ? ,idMateria= ?  WHERE idInscripto =? ";
+
+        try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setDouble(1, inscripcion.getNota());
             ps.setInt(2, inscripcion.getIdAlumno());
@@ -64,9 +64,7 @@ public class inscripcionData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
         }
-            
-            
-            
+
     }
 
     public void dehabilitarInscripcion(int id) {
@@ -85,12 +83,12 @@ public class inscripcionData {
         }
     }
 
-    public Inscripcion buscarInscripcion(int id) { 
+    public Inscripcion buscarInscripcion(int id) {
         String sql = "SELECT nota, idAlumno , idMateria FROM inscripcion WHERE idInscripcion = ? ";
-        
+
         Inscripcion inscripcion = null;
         try {
-            
+
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setInt(1, id);
             ResultSet rs = ps.executeQuery();
@@ -100,19 +98,19 @@ public class inscripcionData {
                 inscripcion.setNota(rs.getDouble("Nota"));
                 inscripcion.getIdAlumno();
                 inscripcion.getIdMateria();
-             
+
             } else {
                 JOptionPane.showMessageDialog(null, "Inscripcion con id" + id + " no encontrado.");
             }
             ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
-        } 
-        
+        }
+
         return inscripcion;
     }
 
-    public void habilitarInscripcion (int id) { 
+    public void habilitarInscripcion(int id) {
         String sql = "UPDATE materia SET estado = 1 WHERE idMateria = ?";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
@@ -127,9 +125,28 @@ public class inscripcionData {
         }
 
     }
-        
-        
-        
-} 
 
+    public void cargarNota(int idMateria, int idAlumno, double nota) {
 
+        String sql = "UPDATE inscripcion SET nota = ? WHERE idMateria = ? AND idAlumno = ?";
+
+        try {
+            
+            PreparedStatement ps = con.prepareStatement(sql);
+            ps.setDouble(1, nota);
+            ps.setInt(2, idMateria);
+            ps.setInt(3, idAlumno);
+            
+            int n = ps.executeUpdate();
+            if (n == 1) {
+            
+                JOptionPane.showMessageDialog(null, "Nota Cargada con exito.");
+            }
+
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
+        }
+
+    }
+
+}

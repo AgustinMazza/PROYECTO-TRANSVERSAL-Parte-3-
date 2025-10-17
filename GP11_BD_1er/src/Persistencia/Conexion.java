@@ -18,8 +18,8 @@ public class Conexion {
     }
 
     // método(s)
-    public static Connection getConexion() throws SQLException {
-        if (connection == null || connection.isClosed()) {
+    public static Connection getConexion(){
+        if (connection == null){
             try {
                 Class.forName("org.mariadb.jdbc.Driver");
                 connection = (Connection) DriverManager.getConnection(URL + DB, USUARIO, PASSWORD);

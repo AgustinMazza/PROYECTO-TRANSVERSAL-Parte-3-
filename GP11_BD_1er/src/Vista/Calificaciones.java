@@ -213,6 +213,7 @@ public class Calificaciones extends javax.swing.JInternalFrame {
 
     private void comboBoxAlumno() {
         String sql = "SELECT idAlumno FROM alumno WHERE estado = 1";
+        System.out.println("combo alumno");
         try (java.sql.Connection con = Conexion.getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
 
             ResultSet rs = ps.executeQuery();
@@ -227,6 +228,7 @@ public class Calificaciones extends javax.swing.JInternalFrame {
 
     private void comboBoxMateria() {
         String sql = "SELECT idMateria FROM materia WHERE estado = 1";
+        System.out.println("combo materia");
         try (java.sql.Connection con = Conexion.getConexion(); PreparedStatement ps = con.prepareStatement(sql)) {
 
             ResultSet rs = ps.executeQuery();

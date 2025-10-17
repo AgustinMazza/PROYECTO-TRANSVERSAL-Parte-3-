@@ -10,7 +10,7 @@ public class Inscripcion {
     private int idMateria;
     
     // constructor(es)
-    public Inscripcion(int idInscripto, int idAlumno, int idMateria) {
+    public Inscripcion(int idInscripto, int idAlumno, int idMateria, double nota) {
         this.idInscripto = idInscripto;
         this.nota = 0.0;
         this.idAlumno = idAlumno;
