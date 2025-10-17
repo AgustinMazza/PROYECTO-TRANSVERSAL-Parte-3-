@@ -37,7 +37,7 @@ public class inscripcionData {
                 inscripcion.setIdMateria(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Inscripcion agregada.");
             }
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
         }
@@ -60,7 +60,7 @@ public class inscripcionData {
                 JOptionPane.showMessageDialog(null, "Inscripcion modificada con exito.");
             }
 
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
         }
@@ -102,7 +102,7 @@ public class inscripcionData {
             } else {
                 JOptionPane.showMessageDialog(null, "Inscripcion con id" + id + " no encontrado.");
             }
-            ps.close();
+           
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion.");
         }

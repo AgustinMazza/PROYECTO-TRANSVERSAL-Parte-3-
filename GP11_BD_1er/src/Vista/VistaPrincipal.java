@@ -33,7 +33,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenuInscripcion = new javax.swing.JMenu();
         jMenuItemInscripcion = new javax.swing.JMenuItem();
         jMenuNotas = new javax.swing.JMenu();
-        jMenuItemNotas = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuSalir = new javax.swing.JMenu();
 
@@ -104,14 +103,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenuInscripcion);
 
         jMenuNotas.setText("Notas");
-
-        jMenuItemNotas.setText("Calificaciones");
-        jMenuItemNotas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItemNotasActionPerformed(evt);
-            }
-        });
-        jMenuNotas.add(jMenuItemNotas);
 
         jMenuItem2.setText("Cargar Notas");
         jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
@@ -188,15 +179,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
         jDesktopPane1.moveToFront(aux3);
     }//GEN-LAST:event_jMenuItemInscripcionActionPerformed
 
-    private void jMenuItemNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemNotasActionPerformed
-        jDesktopPane1.removeAll();
-        jDesktopPane1.repaint();
-        Calificaciones aux4 = new Calificaciones();
-        aux4.setVisible(true);
-        jDesktopPane1.add(aux4);
-        jDesktopPane1.moveToFront(aux4);
-    }//GEN-LAST:event_jMenuItemNotasActionPerformed
-
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         jDesktopPane1.removeAll();
         jDesktopPane1.repaint();
@@ -263,7 +245,6 @@ public class VistaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemListarAlumno;
     private javax.swing.JMenuItem jMenuItemMateria;
     private javax.swing.JMenuItem jMenuItemModificarAlumno;
-    private javax.swing.JMenuItem jMenuItemNotas;
     private javax.swing.JMenu jMenuMateria;
     private javax.swing.JMenu jMenuNotas;
     private javax.swing.JMenu jMenuSalir;

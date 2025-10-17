@@ -5,7 +5,6 @@ import javax.swing.JOptionPane;
 
 
 /* @author Grupo 11 */
-
 public class Conexion {
 
     private static final String URL = "jdbc:mariadb://localhost/";
@@ -18,16 +17,14 @@ public class Conexion {
     }
 
     // método(s)
-    public static Connection getConexion(){
-        if (connection == null){
-            try {
+    public static Connection getConexion() {
+        try {
+            if (connection == null || connection.isClosed()) {
                 Class.forName("org.mariadb.jdbc.Driver");
-                connection = (Connection) DriverManager.getConnection(URL + DB, USUARIO, PASSWORD);
-            } catch (ClassNotFoundException e) {
-                JOptionPane.showMessageDialog(null, "Error al cargar los drivers.");
-            } catch (SQLException ex) {
-                JOptionPane.showMessageDialog(null, "Error al conectarse a la base de datos.");
+                connection = DriverManager.getConnection(URL + DB, USUARIO, PASSWORD);
             }
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al conectar: " + e.getMessage());
         }
         return connection;
     }

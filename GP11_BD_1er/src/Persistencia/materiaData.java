@@ -34,7 +34,7 @@ public class materiaData {
                 materia.setIdMateria(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Materia agregada.");
             }
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia.");
         }
@@ -58,7 +58,7 @@ public class materiaData {
                 JOptionPane.showMessageDialog(null, "Materia modificado con exito.");
             }
 
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia.");
         }
@@ -98,7 +98,7 @@ public class materiaData {
             } else {
                 JOptionPane.showMessageDialog(null, "Materia con id" + id + " no encontrado.");
             }
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla materia.");
         }

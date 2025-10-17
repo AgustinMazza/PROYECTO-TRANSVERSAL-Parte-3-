@@ -33,7 +33,11 @@ public class main {
         System.out.println("GRUPO 11 - (NO NOS SEPAREN)");
         for (int i = 4; i < 10; i++) {
             Alumno aluEncontrado = alu.buscarAlumno(i);
-            System.out.println(aluEncontrado.toString());
+            if(!aluEncontrado.isEstado() == false){
+                System.out.println(aluEncontrado.toString());
+            }else{
+                System.out.println("Alumno " + i + " no encontrado");
+            }
         }
     }
 }

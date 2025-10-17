@@ -36,7 +36,7 @@ public class AlumnoData {
                 alumno.setIdAlumno(rs.getInt(1));
                 JOptionPane.showMessageDialog(null, "Alumno agregado.");
             }
-            ps.close();
+            
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno.");
         }
@@ -98,7 +98,6 @@ public class AlumnoData {
             }else{
                 JOptionPane.showMessageDialog(null, "Alumno con id" + id + " no encontrado.");
             }
-            ps.close();
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla alumno.");
         }
